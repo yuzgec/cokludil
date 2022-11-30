@@ -26,7 +26,8 @@ class ServiceController extends Controller
 
     public function store(Request $request)
     {
-        $New = Service::create($request->all());
+        $New = Service::create($request->except('_token', 'image', 'gallery'));
+
 
         if($request->hasfile('image')){
             $New->addMedia($request->image)->toMediaCollection('page');
@@ -58,10 +59,7 @@ class ServiceController extends Controller
 
     public function update(Request $request, Page $Update)
     {
-        //dd($request->all());
         $Update->update($request->except('_token', '_method', 'category'));
-
-
 
         if($request->removeImage == "1"){
             $Update->media()->where('collection_name', 'page')->delete();

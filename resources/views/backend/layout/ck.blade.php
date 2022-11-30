@@ -4,7 +4,7 @@
         CKEDITOR.replace( 'aciklama{{$localeCode}}', {
         filebrowserUploadUrl: "{{ route('page.postUpload', ['_token' => csrf_token()]) }}",
         filebrowserUploadMethod: 'form',
-        height : 500,
+        height : 300,
             toolbar: [
                 { name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ], items: [ 'Bold']},
                 { name: 'paragraph',items: [ 'BulletedList']},

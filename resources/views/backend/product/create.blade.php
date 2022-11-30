@@ -83,7 +83,7 @@
 
             <div class="form-group mb-3 row">
                 <div class="col-12 mt-1">
-                    <select class="form-control" data-placeholder="Kategori Seçiniz"  multiple name="category[]">
+                    <select class="form-control" data-placeholder="Kategori Seçiniz" name="category">
                         <option>Kategori Seçiniz</option>
                         @foreach($Kategori as $item)
                             <option value="{{ $item->id }}">
@@ -95,7 +95,7 @@
             </div>
 
             <input type="text" placeholder="Ürün Kodu" name="sku" class="form-control">
-            <div class="form-group mb-3 row">
+        {{--    <div class="form-group mb-3 row">
                 <div class="col-6 mt-1">
                     <div class="input-group mb-2">
                         <span class="input-group-text">₺</span>
@@ -200,7 +200,7 @@
                         </label>
                     </div>
                 </div>
-            </div>
+            </div>--}}
         </div>
 
 

@@ -1,10 +1,7 @@
 @extends('frontend.layout.app')
 @section('content')
 
-    <div class="bixol-breadcrumb" data-background="/frontend/images/banner.jpg">
-        <span class="breadcrumb-object">
-            <img src="/frontend/images/blog/email-icon.png" alt="{{ config('app.name') }}">
-        </span>
+    <div class="bixol-breadcrumb" data-background="/title.jpg">
 
         <div class="container">
             <div class="breadcrumb-content">
@@ -46,7 +43,7 @@
                             <h3>{{ $Detay->title }}</h3>
                         </div>
                         <div class="pera-text mt-20">
-                            <p></p>
+                            {!! $Detay->desc !!}
                         </div>
 
                     </div>

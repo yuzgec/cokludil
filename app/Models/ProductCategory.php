@@ -28,7 +28,7 @@ class ProductCategory extends Model implements HasMedia,TranslatableContract,Vie
     protected $table = 'product_category';
 
     public function getProduct(){
-        return $this->belongsToMany(Product::class);
+        return $this->hasMany(Product::class,'id', 'category');
     }
 
     public function registerMediaConversions(Media $media = null): void

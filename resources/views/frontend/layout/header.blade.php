@@ -55,18 +55,16 @@
                                     @endforeach
                                 </ul>
                             </li>
-                            @foreach($ProductCategory->where('parent_id', 0) as $row)
-                            <li class="has-submenu"><a href="#">{{ $row->title }}</a>
+                            @foreach($ProductCategory as $row)
+                            <li class="has-submenu"><a href="{{ route('categorydetail',$row->slug) }}">{{ $row->title }}</a>
                                 <ul>
-                                    @foreach($Product->where('id', $row->product_id) as $item)
+                                    @foreach($Product->where('category', $row->id) as $item)
                                         <li>
                                             <a href="{{ route('productdetail',$item->slug) }}">
                                                 {{ $item->title }}
                                             </a>
                                         </li>
                                     @endforeach
-
-
                                 </ul>
                             </li>
                             @endforeach

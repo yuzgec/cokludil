@@ -17,9 +17,9 @@ class HomeController extends Controller
         SEOMeta::setTitle("Ermaksan Deri Makinaları Kürk Makinaları");
         SEOMeta::setDescription("Ermaksan 1989 yılından beri İzmir'de Deri ve Kürk Makinaları üretimi Yapmaktadır.");
         SEOMeta::setCanonical(url()->full());
-
-        $Product = Product::with(['getCategory','getPivot'])->get();
-        return view('frontend.index', compact('Product'));
+        $Hakkimizda = Page::where('id', '=',1)->first();
+        $Brand =  ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18'];
+        return view('frontend.index', compact('Hakkimizda','Brand'));
     }
 
     public function contactus(){
@@ -36,14 +36,8 @@ class HomeController extends Controller
         $Detay = ProductCategory::whereHas('translations', function ($query) use ($url) {
             $query->where('slug', $url);
         })->first();
-
-        //dd($Detay);
         views($Detay)->cooldown(60)->record();
-
-        $Product = Product::with(['getCategory','getPivot'])->get();
-        //dd($Product);
-
-        //views($Detay)->cooldown(60)->record();
+        $Product = Product::with(['getCategory'])->where('category',$Detay->id)->get();
         SEOMeta::setTitle($Detay->title.' | Ermaksan Deri Makinaları Kürk Makinaları');
         SEOMeta::setDescription("Ermaksan 1989 yılından beri İzmir'de Deri ve Kürk Makinaları üretimi Yapmaktadır.");
         SEOMeta::setCanonical(url()->full());

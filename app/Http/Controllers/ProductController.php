@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
@@ -25,21 +24,22 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        $New = Product::create($request->except('category','image','gallery'));
+        $New = Product::create($request->except('_token', 'image', 'gallery'));
 
         if($request->hasfile('image')){
             $New->addMedia($request->image)->toMediaCollection('page');
         }
-
+        if($request->hasfile('gallery')) {
+            foreach ($request->gallery as $item){
+                $New->addMedia($item)->toMediaCollection('gallery');
+            }
+        }
 
         $New->save();
-
-        $New->getCategory()->attach($request->category);
 
         toast(SWEETALERT_MESSAGE_CREATE,'success');
         return redirect()->route('product.index');
     }
-
 
     public function show($id)
     {
@@ -50,30 +50,31 @@ class ProductController extends Controller
     {
         $Edit = Product::where('id',$id)->first();
         $Kategori = ProductCategory::all();
-        $Pivot = DB::table('product_product_category')->where(['product_id'=> $id])->get();
 
-        return view('backend.product.edit', compact('Edit', 'Kategori', 'Pivot'));
+        return view('backend.product.edit', compact('Edit', 'Kategori'));
     }
 
     public function update(Request $request, Product $Update)
     {
+        $Update->update($request->except('_token', '_method', 'image', 'gallery'));
 
-        //dd($request->all());
-        $input = $request->except('category', '_token', '_method');
+        if ($request->removeImage == "1") {
+            $Update->media()->where('collection_name', 'page')->delete();
+        }
 
-        $Update->fill($input)->save();
-
-        if($request->hasfile('image')){
+        if ($request->hasFile('image')) {
+            $Update->media()->where('collection_name', 'page')->delete();
             $Update->addMedia($request->image)->toMediaCollection('page');
         }
 
-        if($request->hasfile('gallery')) {
-            foreach ($request->gallery as $item){
+        if ($request->hasfile('gallery')) {
+            foreach ($request->gallery as $item) {
                 $Update->addMedia($item)->toMediaCollection('gallery');
             }
         }
 
-        $Update->getCategory()->sync($request->category);
+
+        $Update->save();
 
         toast(SWEETALERT_MESSAGE_CREATE,'success');
         return redirect()->route('product.index');

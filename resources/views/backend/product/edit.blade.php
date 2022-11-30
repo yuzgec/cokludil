@@ -87,14 +87,12 @@
                     </h4>
                 </div>
                 <div class="form-group mb-3 row">
-                    <label class="form-label col-3 col-form-label">Kategori </label>
                     <div class="col">
-                        <select class="form-control" multiple name="category[]">
+                        <select class="form-control" name="category">
                             @foreach($Kategori as $item)
                                 <option value="{{ $item->id }}"
-                                @foreach($Pivot as $ss)
-                                    {{ ($ss->product_category_id == $item->id) ? 'selected' : null }}
-                                    @endforeach
+
+                                    {{ ($Edit->category == $item->id) ? 'selected' : null }}
                                 >{{ $item->title }}</option>
                             @endforeach
                         </select>
@@ -102,7 +100,7 @@
                 </div>
 
                 <input type="text" placeholder="Ürün Kodu" class="form-control mb-2">
-                <div class="form-group mb-2 row">
+               {{-- <div class="form-group mb-2 row">
                     <div class="col-6">
                         <div class="input-group mb-2">
                             <span class="input-group-text">₺</span>
@@ -243,7 +241,7 @@
                             </label>
                         </div>
                     </div>
-                </div>
+                </div>--}}
             </div>
 
             <div class="card">

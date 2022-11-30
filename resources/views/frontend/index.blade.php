@@ -9,27 +9,21 @@
                     <div class="about-left">
                         <div class="title-style-2">
                             <h3>{{__('site.firma')}}</h3>
-                            <p>ERMAKSAN 1989 yılından beri İzmir'de tecrübesi ile, kaliteyi ve dayanıklılığı seçmesi ve yüksek kaliteli tabaklama, deri ve kürk makineleri modern teknoloji ile üretmesi sayesinde vazgeçilmez bir marka olmuştur. Ermaksan firması tabaklama, deri ve kürk makinelerinin model ve taleplerini karşılamaktadır.
-
-                            </p>
+                            {!! $Hakkimizda->desc !!}
                         </div>
-                        <div class="h4-pera-txt mt-40">
-                            <p>Toplam üretimimizin 70%'lik bölümü Rusya, ABD, Çin, Almanya, Kazakistan, Özbekistan, Ukrayna, Suudi Arabistan, Tunus, Sudan, Romanya, İsrail, Arnavutluk, İran ve Cezair gibi ülkelere ihraç etmekteyiz.
 
-                            </p>
-                        </div>
                         <div class="about-bottom">
                             <div class="about-list">
                                 <ul>
-                                    <li><span><i class="fas fa-check"></i></span>Residential Cleaning services near youl.</li>
-                                    <li><span><i class="fas fa-check"></i></span>Commercial Cleaning services in autralia.</li>
-                                    <li><span><i class="fas fa-check"></i></span>Professional Floor & carpet cleaning.</li>
+                                    <li><span><i class="fas fa-check"></i></span>Yüksek ürün kalitesi ile sağlam makine</li>
+                                    <li><span><i class="fas fa-check"></i></span>Dünya'nın bir çok noktasına tedarik</li>
+                                    <li><span><i class="fas fa-check"></i></span>Uzman ekip ve profesyonel üretim</li>
                                 </ul>
                             </div>
                             <div class="about-yr-ex">
                                 <span class="icon-wrapper"><i class="flaticon flaticon-trophy"></i></span>
-                                <span class="title">31+</span>
-                                <span class="subtitle">Yıllık Deneyim</span>
+                                <span class="title">{{ date('Y') - 1989 }}</span>
+                                <span class="subtitle">{{__('site.deneyim')}}</span>
                             </div>
                         </div>
                     </div>
@@ -37,11 +31,11 @@
                 <div class="col-lg-6 order-1 order-lg-2">
                     <div class="about-right">
                         <div class="img-wrapper">
-                            <img src="assets/images/home4/about-right.png" alt="">
+                            <img src="{{ (!$Hakkimizda->getFirstMediaUrl('page')) ? '/resimyok.jpg' : $Hakkimizda->getFirstMediaUrl('page', 'thumb') }}" alt="">
                             <div class="ab-right-content">
                                 <div class="dark-bg">
                                     <span class="title">600+</span>
-                                    <span class="subtitle">Müşteri</span>
+                                    <span class="subtitle">{{__('site.musteri')}}</span>
                                 </div>
                             </div>
                         </div>
@@ -50,6 +44,50 @@
             </div>
         </div>
     </section>
+
+    <div class="home5-git-area mt-200 pt-40 pb-40" data-background="https://www.ermaksan.net/img/title.jpg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 offset-lg-6">
+                    <div class="git-content">
+                        <span class="title">{{ __('site.katalog2') }}</span>
+                        <p>{{ __('site.katalog3') }}</p>
+                        <a href="{{ route('contactus') }}" class="home5-primary-btn">{{ __('site.iletisimegec') }}<span><i class="flaticon flaticon-arrow"></i></span></a>
+                        <a href="/kat.pdf" class="home5-primary-btn">{{ __('site.katalog') }} <span><i class="flaticon flaticon-arrow"></i></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="h4-blog-area pt-30 pb-50">
+        <div class="container">
+            <div class="h4-blogs">
+                <div class="row">
+                    @foreach($Product->where('category', 1) as $item)
+                        <div class="col-lg-4 col-md-6">
+                            <div class="h4-blog-column">
+                                <div class="thumb-wrapper">
+                                    <a href="{{ route('productdetail', $item->slug) }}" title="{{ $item->title }}">
+                                        <img src="{{ (!$item->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $item->getFirstMediaUrl('page')}}">
+                                    </a>
+                                </div>
+                                <div class="blog-content">
+                                    <div class="h6-headline">
+                                        <a href="{{ route('productdetail', $item->slug) }}" title="{{ $item->title }}">
+                                            <h4>{{ $item->title }}</h4>
+                                        </a>
+                                    </div>
+                                    {{ $item->title }}
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+        </div>
+    </section>
+
 
 
     <section class="home5-portfolio-area pt-50">
@@ -69,7 +107,7 @@
             </div>
             <div class="home5-portfolio-slider">
 
-                @foreach($ProductCategory->where('parent_id', 1) as $item)
+                @foreach($ProductCategory as $item)
                 <div class="portfolio-single">
                     <div class="img-wrapper">
                         <img src="assets/images/home5/pf-1.jpg" alt="">
@@ -103,64 +141,28 @@
         </div>
     </section>
 
-    <div class="home5-git-area mt-200 pt-40 pb-40" data-background="https://www.ermaksan.net/img/title.jpg">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-6">
-                    <div class="git-content">
-                        <span class="title">{{ __('site.katalog2') }}</span>
-                        <p>{{ __('site.katalog3') }}</p>
-                        <a href="{{ route('contactus') }}" class="home5-primary-btn">{{ __('site.iletisimegec') }}<span><i class="flaticon flaticon-arrow"></i></span></a>
-                        <a href="/kat.pdf" class="home5-primary-btn">{{ __('site.katalog') }} <span><i class="flaticon flaticon-arrow"></i></span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="bixol-case-study mt-50 pb-50">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6">
+                <div class="col-lg-4">
                     <div class="bixol-ct-left" data-background="assets/images/home1/map-bg.png">
-                        <span class="ct-title">16<sup>+</sup></span>
-                        <span class="ct-subtitle">Düna Genelinde 16 Ülkeye İhracat</span>
+                        <span class="ct-title">32<sup>+</sup></span>
+                        <span class="ct-subtitle">Dünya Genelinde 32 Ülkeye İhracat</span>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-8">
                     <div class="bixol-ct-right">
                         <div class="row">
-                            <div class="col-md-4 col-sm-6 p-0 grid-item">
+                            @foreach($Brand as $item)
+                            <div class="col-md-2 col-sm-4 p-0 grid-item">
                                 <div class="bixol-pt-item">
-                                    <img src="https://ermaksan.net/goadmin/files/config/marka/Almanya.jpg" alt="">
+                                    <img src="/frontend/images/marka/{{$item}}.jpg" alt="Deri Makinaları İmalatı">
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6 p-0 grid-item">
-                                <div class="bixol-pt-item">
-                                    <img src="https://ermaksan.net/goadmin/files/config/marka/italya.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 p-0 grid-item">
-                                <div class="bixol-pt-item">
-                                    <img src="https://ermaksan.net/goadmin/files/config/marka/portekiz.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 p-0 grid-item">
-                                <div class="bixol-pt-item">
-                                    <img src="https://ermaksan.net/goadmin/files/config/marka/italya.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 p-0 grid-item">
-                                <div class="bixol-pt-item">
-                                    <img src="https://ermaksan.net/goadmin/files/config/marka/Almanya.jpg" alt="">
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6 p-0 grid-item">
-                                <div class="bixol-pt-item">
-                                    <img src="https://ermaksan.net/goadmin/files/config/marka/portekiz.jpg" alt="">
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
+
                     </div>
                 </div>
             </div>

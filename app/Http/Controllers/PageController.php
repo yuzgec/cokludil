@@ -31,7 +31,7 @@ class PageController extends Controller
 
     public function store(PageRequest $request)
     {
-        $New = Page::create($request->all());
+        $New = Page::create($request->except('_token', 'image', 'gallery'));
 
         if($request->hasfile('image')){
             $New->addMedia($request->image)->toMediaCollection('page');
@@ -66,11 +66,9 @@ class PageController extends Controller
     public function update(Request $request, Page $Update)
     {
        //dd($request->all());
-        $Update->update($request->except('_token', '_method', 'category'));
+        $Update->update($request->except('_token', '_method', 'image', 'gallery'));
 
-
-
-        if($request->removeImage == "1"){
+        if ($request->removeImage == "1") {
             $Update->media()->where('collection_name', 'page')->delete();
         }
 
@@ -79,11 +77,12 @@ class PageController extends Controller
             $Update->addMedia($request->image)->toMediaCollection('page');
         }
 
-        if($request->hasfile('gallery')) {
-            foreach ($request->gallery as $item){
+        if ($request->hasfile('gallery')) {
+            foreach ($request->gallery as $item) {
                 $Update->addMedia($item)->toMediaCollection('gallery');
             }
         }
+
 
         $Update->save();
 

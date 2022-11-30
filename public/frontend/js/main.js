@@ -4,7 +4,7 @@
 
 File:           JS Core
 Version:        1.0
-Last change:    00/00/00 
+Last change:    00/00/00
 -------------------------------------------------------------------------------- */
 (function() {
 
@@ -12,7 +12,7 @@ Last change:    00/00/00
 
 	var Bixol = {
 		init: function() {
-			this.Basic.init();  
+			this.Basic.init();
 		},
 
 		Basic: {
@@ -21,17 +21,17 @@ Last change:    00/00/00
 				this.BackgroundImage();
 				this.ScrollTopBtn();
 				this.Animation();
-				this.HeaderSticky(); 
+				this.HeaderSticky();
 				this.MobileMenu();
                 this.Carousel();
                 this.CustomCompareSlider();
-				this.PortfolioFilter(); 
-				this.Accordion(); 
-				this.CircleProgress(); 
+				this.PortfolioFilter();
+				this.Accordion();
+				this.CircleProgress();
 				this.H4HeaderSearch();
-				this.ServicesHover(); 
+				this.ServicesHover();
 				this.BixolPopup();
-				this.BixolCounterUp(); 
+				this.BixolCounterUp();
 				this.GridMassonry();
 				this.CountDown();
 			},
@@ -50,7 +50,7 @@ Last change:    00/00/00
 
 			ScrollTopBtn: function (){
 				$(window).on("scroll", function(){
-					var ScrollBar = $(this).scrollTop(); 
+					var ScrollBar = $(this).scrollTop();
 					if( ScrollBar > 200 ) {
 						$(".scrolltop-btn").addClass("visible");
 					} else {
@@ -61,7 +61,7 @@ Last change:    00/00/00
 				$(".scrolltop-btn").on("click", function(e){
 					e.preventDefault();
 					$("body,html").animate({
-						scrollTop: 0, 
+						scrollTop: 0,
 					}, 'easeInOutExpo');
 				});
 			},
@@ -81,7 +81,7 @@ Last change:    00/00/00
 				$(window).on("scroll", function(){
 					var ScrollBar = $(this).scrollTop();
 					if (ScrollBar > 150 ) {
-						$(".bixol-header").addClass("header-sticky"); 
+						$(".bixol-header").addClass("header-sticky");
 					} else {
 						$(".bixol-header").removeClass("header-sticky");
 					}
@@ -91,7 +91,7 @@ Last change:    00/00/00
 			MobileMenu: function (){
 
 				$(".bixol-mobile-hamburger").on("click", function(){
-					$(".bixol-mobile-menu").toggleClass("mobile-menu-active"); 
+					$(".bixol-mobile-menu").toggleClass("mobile-menu-active");
 					$(this).toggleClass("active");
 				});
 
@@ -111,13 +111,13 @@ Last change:    00/00/00
                     nextArrow: '<button type="button" class="next-arrow"><i class="fas fa-angle-right"></i></button>',
 					responsive: [
 						{
-							breakpoint: 960, 
+							breakpoint: 960,
 							settings: {
 								slidesToShow: 2,
 							}
-						}, 
+						},
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 1,
 							}
@@ -126,125 +126,125 @@ Last change:    00/00/00
 				});
 
 				$(".bixol-team-slider").slick({
-					slidesToShow: 4, 
+					slidesToShow: 4,
 					autoplay: true,
 					dots: true,
 					arrows: false,
 					responsive: [
 						{
-							breakpoint: 1000, 
+							breakpoint: 1000,
 							settings: {
 								slidesToShow: 3,
 							}
 						},
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 2,
 							}
 						},
 						{
-							breakpoint: 576, 
+							breakpoint: 576,
 							settings: {
 								slidesToShow: 1,
 							}
 						}
 					]
-				}); 
+				});
 
 				$(".bixol-feedback-slider").slick({
-					slidesToShow: 3, 
-					autoplay: true, 
+					slidesToShow: 3,
+					autoplay: true,
 					dots: true,
 					arrows: false,
 					responsive: [
 						{
-							breakpoint: 992, 
+							breakpoint: 992,
 							settings: {
-								slidesToShow: 2, 
+								slidesToShow: 2,
 							}
-						}, 
+						},
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 1,
 							}
 						}
 					]
-				}); 
+				});
 
 				$(".bixol-blog-slider").slick({
-					slidesToShow: 2, 
+					slidesToShow: 2,
 					autoplay: true,
-					arrows: false, 
+					arrows: false,
 					dots: true,
 					responsive: [
 						{
-							breakpoint: 1200, 
+							breakpoint: 1200,
 							settings: {
-								slidesToShow: 1, 
+								slidesToShow: 1,
 							}
 						}
 					]
 				});
 
 				$(".ab-service-slider").slick({
-					slidesToShow: 3, 
-					autoplay: true, 
-					arrows: false, 
-					dots: true, 
-					responsive: [
-						{
-							breakpoint: 992, 
-							settings: {
-								slidesToShow: 2,
-							}
-						}, 
-						{
-							breakpoint: 768, 
-							settings: {
-								slidesToShow: 1,
-							}
-						}
-					]
-				}); 
-
-				$(".abv2-sr-slider").slick({
-					slidesToShow: 3, 
-					autoplay: true, 
-					arrows: false, 
+					slidesToShow: 3,
+					autoplay: true,
+					arrows: false,
 					dots: true,
 					responsive: [
 						{
-							breakpoint: 1100, 
+							breakpoint: 992,
 							settings: {
-								slidesToShow: 2, 
+								slidesToShow: 2,
 							}
-						}, 
+						},
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 1,
 							}
 						}
 					]
-				}); 
+				});
+
+				$(".abv2-sr-slider").slick({
+					slidesToShow: 3,
+					autoplay: true,
+					arrows: false,
+					dots: true,
+					responsive: [
+						{
+							breakpoint: 1100,
+							settings: {
+								slidesToShow: 2,
+							}
+						},
+						{
+							breakpoint: 768,
+							settings: {
+								slidesToShow: 1,
+							}
+						}
+					]
+				});
 
 				$(".abv2-feedback-wrapper").slick({
 					slidesToShow: 3,
 					slidesToScroll: 3,
-					dots: true, 
+					dots: true,
 					arrows: false,
 					responsive: [
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 2,
 								slidesToScroll: 2,
 							}
-						}, 
+						},
 						{
-							breakpoint: 576, 
+							breakpoint: 576,
 							settings: {
 								slidesToShow: 1,
 								slidesToScroll: 1,
@@ -257,17 +257,17 @@ Last change:    00/00/00
 					slidesToShow: 3,
 					slidesToScroll: 2,
 					autoplay: true,
-					arrows: false, 
+					arrows: false,
 					dots: true,
 					responsive: [
 						{
-							breakpoint: 992, 
+							breakpoint: 992,
 							settings: {
 								slidesToShow: 2,
 							}
-						}, 
+						},
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 1,
 							}
@@ -276,13 +276,13 @@ Last change:    00/00/00
 				});
 
 				$(".sr-details-slider").slick({
-					slidesToShow: 2, 
+					slidesToShow: 2,
 					autoplay: true,
-					prevArrow: '<button type="button" class="prev-btn"><i class="fas fa-angle-left"></i></button>', 
-					nextArrow: '<button type="button" class="next-btn"><i class="fas fa-angle-right"></i></button>', 
+					prevArrow: '<button type="button" class="prev-btn"><i class="fas fa-angle-left"></i></button>',
+					nextArrow: '<button type="button" class="next-btn"><i class="fas fa-angle-right"></i></button>',
 					responsive: [
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 1,
 							}
@@ -291,20 +291,20 @@ Last change:    00/00/00
 				});
 
 				$(".home2-service-slider").slick({
-					slidesToShow: 3, 
+					slidesToShow: 3,
 					autoplay: true,
 					prevArrow: '<button type="button" class="prev-btn"><i class="fas fa-angle-left"></i></button>',
 					nextArrow: '<button type="button" class="next-btn"><i class="fas fa-angle-right"></i></button>',
 					responsive: [
 						{
-							breakpoint: 992, 
+							breakpoint: 992,
 							settings: {
 								slidesToShow: 2,
 								slidesToScroll: 2,
 							}
 						},
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 1,
 								slidesToScroll: 1,
@@ -315,17 +315,17 @@ Last change:    00/00/00
 
 				$(".home2-brand-slider").slick({
 					autoplay: true,
-					slidesToShow: 4, 
-					arrows: false, 
+					slidesToShow: 4,
+					arrows: false,
 					responsive: [
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 3,
 							}
 						},
 						{
-							breakpoint: 460, 
+							breakpoint: 460,
 							settings: {
 								slidesToShow: 2,
 							}
@@ -334,20 +334,20 @@ Last change:    00/00/00
 				});
 
 				$(".home2-blog-slider").slick({
-					autoplay: true, 
-					slidesToShow: 3, 
-					arrows: false, 
-					dots: true, 
+					autoplay: true,
+					slidesToShow: 3,
+					arrows: false,
+					dots: true,
 					slidesToScroll: 2,
 					responsive: [
 						{
-							breakpoint: 992, 
+							breakpoint: 992,
 							settings: {
 								slidesToShow: 2,
 							}
 						},
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 1,
 								sliedesToScroll: 1,
@@ -357,27 +357,27 @@ Last change:    00/00/00
 				});
 
 				$(".h4-project-slider").slick({
-					autoplay: false, 
-					slidesToShow: 4, 
-					arrows: false, 
+					autoplay: false,
+					slidesToShow: 4,
+					arrows: false,
 					dots: true,
 					slidesToScroll: 3,
 					responsive: [
 						{
-							breakpoint: 992, 
+							breakpoint: 992,
 							settings: {
 								slidesToShow: 3,
 							}
 						},
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 2,
 								slidesToScroll: 2,
 							}
 						},
 						{
-							breakpoint: 576, 
+							breakpoint: 576,
 							settings: {
 								slidesToShow: 1,
 								slidesToScroll: 1,
@@ -385,23 +385,23 @@ Last change:    00/00/00
 						}
 					]
 				});
-				
+
 				$(".h5-service-slider").slick({
-					autoplay: true, 
+					autoplay: true,
 					infinite: false,
-					slidesToShow: 3, 
-					arrows: false, 
-					dots: true, 
+					slidesToShow: 3,
+					arrows: false,
+					dots: true,
 					slidesToScroll: 1,
 					responsive: [
 						{
-							breakpoint: 992, 
+							breakpoint: 992,
 							settings: {
 								slidesToShow: 2,
 							}
 						},
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 1,
 							}
@@ -410,21 +410,21 @@ Last change:    00/00/00
 				});
 
 				$(".home5-feedback-slider").slick({
-					autoplay: true, 
-					infinite: false, 
-					slidesToShow: 3, 
+					autoplay: true,
+					infinite: false,
+					slidesToShow: 3,
 					slidesToScroll: 1,
 					prevArrow: '<button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i></button>',
 					nextArrow: '<button type="button" class="next-btn"><i class="fas fa-arrow-right"></i></button>',
 					responsive: [
 						{
-							breakpoint: 992, 
+							breakpoint: 992,
 							settings: {
 								slidesToShow: 2,
 							}
-						}, 
+						},
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 1,
 							}
@@ -433,20 +433,20 @@ Last change:    00/00/00
 				});
 
 				$(".home5-portfolio-slider").slick({
-					autoplay: true, 
-					slidesToShow: 3, 
+					autoplay: true,
+					slidesToShow: 2,
 					slidesToScroll: 2,
 					prevArrow: '<button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i></button>',
 					nextArrow: '<button type="button" class="next-btn"><i class="fas fa-arrow-right"></i></button>',
 					responsive: [
 						{
-							breakpoint: 992, 
+							breakpoint: 992,
 							settings: {
 								slidesToShow: 2,
 							}
-						}, 
+						},
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 1,
 							}
@@ -455,20 +455,20 @@ Last change:    00/00/00
 				});
 
 				$(".h5-blog-slider").slick({
-					autoplay: true, 
-					slidesToShow: 3, 
-					slidesToScroll: 1, 
+					autoplay: true,
+					slidesToShow: 3,
+					slidesToScroll: 1,
 					prevArrow: '<button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i></button>',
 					nextArrow: '<button type="button" class="next-btn"><i class="fas fa-arrow-right"></i></button>',
 					responsive: [
 						{
-							breakpoint: 992, 
+							breakpoint: 992,
 							settings: {
 								slidesToShow: 2,
 							}
-						}, 
+						},
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 1,
 							}
@@ -477,44 +477,44 @@ Last change:    00/00/00
 				});
 
 				$(".home6-feedback-slider").slick({
-					autoplay: true, 
-					slidesToShow: 1, 
+					autoplay: true,
+					slidesToShow: 1,
 					slidesToScroll: 1,
-					dots: true, 
+					dots: true,
 					arrows: false,
 				});
 
 				$(".home7-service-slider").slick({
-					autoplay: true, 
-					slidesToShow: 3, 
+					autoplay: true,
+					slidesToShow: 3,
 					slidesToScroll: 2,
 					dots: true,
 					arrows: false,
 					responsive: [
 						{
-							breakpoint: 992, 
+							breakpoint: 992,
 							settings: {
 								slidesToShow: 2,
 							}
-						}, 
+						},
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 1,
 							}
-						}, 
+						},
 					]
-				}); 
+				});
 
 				$(".home7-feedback-slider").slick({
-					autoplay: true, 
-					slidesToShow: 2, 
+					autoplay: true,
+					slidesToShow: 2,
 					slidesToScroll: 1,
-					dots: true, 
+					dots: true,
 					arrows: false,
 					responsive: [
 						{
-							breakpoint: 768, 
+							breakpoint: 768,
 							settings: {
 								slidesToShow: 1,
 							}
@@ -522,17 +522,17 @@ Last change:    00/00/00
 					]
 				});
 
-            }, 
+            },
 
             CustomCompareSlider: function (){
                 $('.before-after').beforeAfter();
-            }, 
+            },
 
 			PortfolioFilter: function (){
 
 				var $pfFilter = $(".portfolio-filter .grid");
 
-				var itemLength = $pfFilter.children().length; 
+				var itemLength = $pfFilter.children().length;
 				if( itemLength > 0 ) {
 					$pfFilter.isotope({
 						itemSelector: '.grid-item',
@@ -540,23 +540,23 @@ Last change:    00/00/00
 						  columnWidth: 1
 						},
 					});
-	
+
 					$('.portfolio-filter .filter-button-group').on( 'click', 'li', function() {
 						var filterValue = $(this).attr('data-filter');
 						$pfFilter.isotope({ filter: filterValue });
 					});
-	
+
 					$(".portfolio-filter .filter-button-group li").each(function(){
 						$(this).on("click", function(){
-							$(this).siblings("li.active").removeClass("active"); 
+							$(this).siblings("li.active").removeClass("active");
 							$(this).addClass("active");
 						});
 					});
 				}
-			}, 
+			},
 
 			Accordion: function (){
-				var target = $(".accordion .collapse.show"); 
+				var target = $(".accordion .collapse.show");
 				target.parent().addClass("active");
 
 				$(".accordion .accordion-header a").each(function(){
@@ -565,13 +565,13 @@ Last change:    00/00/00
 						$(this).parents(".accordion-item").addClass("active");
 					})
 				});
-			}, 
+			},
 
 			CircleProgress: function (){
 				if($(".skills-progress").length) {
-					$(".skills-progress").appear(); 
+					$(".skills-progress").appear();
 					$(document.body).on("appear", ".skills-progress", function(e){
-						var skillProgress = $(".skills-progress"); 
+						var skillProgress = $(".skills-progress");
 						skillProgress.each(function(){
 
 							$(this).pieChart({
@@ -589,32 +589,32 @@ Last change:    00/00/00
 						})
 					})
 				}
-			}, 
+			},
 			H4HeaderSearch: function (){
 				$(".h4-header-search span").on("click", function(){
 					$(".h4-header-search-form").addClass("search-form-open");
-				}); 
+				});
 
 				$(".form-close").on("click", function(){
 					$(".h4-header-search-form").removeClass("search-form-open");
 				});
-			}, 
+			},
 
 			ServicesHover: function (){
 				$(".home6-service-bottom .services-column").hover(function(){
 					$(this).find(".h6-pera-txt").slideToggle();
 				});
-			}, 
-		
+			},
+
 			BixolPopup: function (){
 				$(".video-popup").magnificPopup({
-					type: 'iframe', 
+					type: 'iframe',
 					iframe: {
 						patterns: {
 						  youtube: {
 							index: 'youtube.com/',
-							id: 'v=', 
-							src: 'https://www.youtube.com/embed/%id%?autoplay=1' 
+							id: 'v=',
+							src: 'https://www.youtube.com/embed/%id%?autoplay=1'
 						  },
 						},
 					  }
@@ -641,20 +641,20 @@ Last change:    00/00/00
 
 			BixolCounterUp: function (){
 				if($(".odometer").length) {
-					$(".odometer").appear(); 
+					$(".odometer").appear();
 					$(document.body).on("appear", ".odometer", function(e){
-						var odometer = $(".odometer"); 
+						var odometer = $(".odometer");
 						odometer.each(function(){
-							var dataValue = $(this).attr('data-value'); 
+							var dataValue = $(this).attr('data-value');
 							$(this).html(dataValue);
 						});
 					});
 				}
-			}, 
+			},
 
 			GridMassonry: function (){
 				var $pfFilter = $(".grid-massonry .grid");
-				var itemLength = $pfFilter.children().length; 
+				var itemLength = $pfFilter.children().length;
 				if( itemLength > 0 ) {
 					$pfFilter.isotope({
 						itemSelector: '.grid-item',
@@ -664,7 +664,7 @@ Last change:    00/00/00
 					});
 				}
 
-			}, 
+			},
 			CountDown: function (){
 				if($(".countdown").length) {
 					$('.countdown').downCount({
@@ -674,9 +674,9 @@ Last change:    00/00/00
 						alert('Countdown done!');
 					});
 				}
-				
+
 			}
-		}	
+		}
 	}
 	jQuery(document).ready(function (){
 		Bixol.init();
