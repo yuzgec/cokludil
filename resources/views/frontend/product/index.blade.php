@@ -135,7 +135,7 @@
 
     <section class="h4-blog-area">
         <div class="container">
-            <div class="row">
+            <div class="row mt-30">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="bixol-title-area text-center">
                         <h3>DİĞER MAKİNELERİMİZ</h3>

@@ -35,7 +35,9 @@
             <div class="row align-items-center">
                 <div class="col-lg-2 col-6">
                     <div class="logo-wrapper">
-                        <a href="{{ route('home') }}"><img src="/logo.jpg" alt="Ermeksan" style="width: 200px"></a>
+                        <a href="{{ route('home') }}">
+                            <img src="/logo.jpg" alt="Ermeksan" style="width: 200px">
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-8 desktop-menu-wrapper">
@@ -45,11 +47,7 @@
                             <li class="has-submenu"><a href="#">{{ __('site.kurumsal') }}</a>
                                 <ul>
                                     @foreach($Pages->where('category', 1) as $item)
-                                    <li>
-                                        <a href="{{ route('corporatedetail',$item->slug) }}">
-                                            {{ $item->title }}
-                                        </a>
-                                    </li>
+                                    <li><a href="{{ route('corporatedetail',$item->slug) }}">{{ $item->title }}</a></li>
                                     @endforeach
                                 </ul>
                             </li>
@@ -57,8 +55,9 @@
                             <li class="has-submenu"><a href="{{ route('categorydetail',$row->slug) }}">{{ $row->title }}</a>
                                 <ul>
                                     @foreach($Product->where('category', $row->id) as $item)
+                                            @php $slug = ($row->id == 1) ?  'productdetail' : 'partdetail' @endphp
                                         <li>
-                                            <a href="{{ route('productdetail',$item->slug) }}">
+                                            <a href="{{ route($slug, $item->slug) }}">
                                                 {{ $item->title }}
                                             </a>
                                         </li>
@@ -66,10 +65,13 @@
                                 </ul>
                             </li>
                             @endforeach
-                            <li><a href="/yeni/sayfa?ad=Referanslar">{{ __('site.referanslar') }} </a></li>
-                            <li><a href="/yeni/sayfa?ad=İnsan Kaynakları">{{ __('site.ik') }}</a></li>
-                            <li><a href="/yeni/sayfa?ad=İnsan Kaynakları">{{ __('site.galeri') }}</a></li>
+
+                            <li><a href="/yeni/sayfa?ad=İnsan Kaynakları">Blog</a></li>
+                            <li><a href="{{ route('reference' ) }}">{{ __('site.referanslar') }} </a></li>
+
+                            <li><a href="{{ route('gallery') }}">{{ __('site.galeri') }}</a></li>
                             <li><a href="{{ route('contactus') }}">{{ __('site.iletisim') }}</a></li>
+
                         </ul>
                     </div>
                 </div>

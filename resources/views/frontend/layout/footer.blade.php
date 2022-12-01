@@ -1,4 +1,7 @@
      <footer class="bixol-footer" >
+         <a href="index.html" class="bixol-footer-logo">
+             <img src="assets/images/logo.png" alt="">
+         </a>
 
         <!--    <div class="container">
                 <div class="row">

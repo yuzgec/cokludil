@@ -22,13 +22,6 @@ class HomeController extends Controller
         return view('frontend.index', compact('Hakkimizda','Brand'));
     }
 
-    public function contactus(){
-
-        SEOMeta::setTitle('İletişim | Ermaksan Deri Makinaları Kürk Makinaları');
-        SEOMeta::setDescription("Ermaksan 1989 yılından beri İzmir'de Deri ve Kürk Makinaları üretimi Yapmaktadır.");
-        SEOMeta::setCanonical(url()->full());
-        return view('frontend.corporate.contactus');
-    }
 
 
     public function categorydetail($url)
@@ -70,5 +63,39 @@ class HomeController extends Controller
         SEOMeta::setDescription("Ermaksan 1989 yılından beri İzmir'de Deri ve Kürk Makinaları üretimi Yapmaktadır.");
         SEOMeta::setCanonical(url()->full());
         return view('frontend.product.index', compact('Detay'));
+    }
+
+    public function partdetail($url)
+    {
+        $Detay = Product::whereHas('translations', function ($query) use ($url) {
+            $query->where('slug', $url);
+        })->first();
+
+        views($Detay)->cooldown(60)->record();
+
+
+        SEOMeta::setTitle($Detay->title.' | Ermaksan Deri Makinaları Kürk Makinaları');
+        SEOMeta::setDescription("Ermaksan 1989 yılından beri İzmir'de Deri ve Kürk Makinaları üretimi Yapmaktadır.");
+        SEOMeta::setCanonical(url()->full());
+        return view('frontend.product.index', compact('Detay'));
+    }
+
+    public function gallery(){
+
+        return view('frontend.gallery.index');
+    }
+
+
+    public function contactus(){
+        SEOMeta::setTitle('İletişim | Ermaksan Deri Makinaları Kürk Makinaları');
+        SEOMeta::setDescription("Ermaksan 1989 yılından beri İzmir'de Deri ve Kürk Makinaları üretimi Yapmaktadır.");
+        SEOMeta::setCanonical(url()->full());
+        return view('frontend.corporate.contactus');
+    }
+
+
+    public function reference(){
+
+        return redirect()->route('home');
     }
 }
