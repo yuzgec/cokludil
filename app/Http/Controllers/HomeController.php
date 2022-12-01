@@ -59,7 +59,7 @@ class HomeController extends Controller
         views($Detay)->cooldown(60)->record();
 
 
-        SEOMeta::setTitle($Detay->title.' | Ermaksan Deri Makinaları Kürk Makinaları');
+        SEOMeta::setTitle($Detay->title.' | Deri Makinaları | Ermaksan Deri Makinaları Kürk Makinaları');
         SEOMeta::setDescription("Ermaksan 1989 yılından beri İzmir'de Deri ve Kürk Makinaları üretimi Yapmaktadır.");
         SEOMeta::setCanonical(url()->full());
         return view('frontend.product.index', compact('Detay'));
@@ -72,9 +72,7 @@ class HomeController extends Controller
         })->first();
 
         views($Detay)->cooldown(60)->record();
-
-
-        SEOMeta::setTitle($Detay->title.' | Ermaksan Deri Makinaları Kürk Makinaları');
+        SEOMeta::setTitle($Detay->title.' | Yedek Parça | Ermaksan Deri Makinaları Kürk Makinaları');
         SEOMeta::setDescription("Ermaksan 1989 yılından beri İzmir'de Deri ve Kürk Makinaları üretimi Yapmaktadır.");
         SEOMeta::setCanonical(url()->full());
         return view('frontend.product.index', compact('Detay'));
@@ -96,6 +94,6 @@ class HomeController extends Controller
 
     public function reference(){
 
-        return redirect()->route('home');
+        return view('frontend.reference.index');
     }
 }
