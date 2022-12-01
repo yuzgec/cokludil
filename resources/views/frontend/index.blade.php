@@ -78,7 +78,7 @@
                                             <h4>{{ $item->title }}</h4>
                                         </a>
                                     </div>
-                                    {{ $item->title }}
+                                    {{ __('site.firma') }}
                                 </div>
                             </div>
                         </div>

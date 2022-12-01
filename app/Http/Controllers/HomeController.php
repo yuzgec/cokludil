@@ -95,4 +95,10 @@ class HomeController extends Controller
 
         return view('frontend.reference.index');
     }
+
+    public function blog(){
+
+        return view('frontend.blog.index');
+    }
+
 }

@@ -7,7 +7,7 @@ return [
     'email' => 'Эл. почта',
     'adres' => 'Адрес',
     'anasayfa' => 'дом',
-    'kurumsal' => 'институциональный',
+    'kurumsal' => 'о нас',
     'iletisim' => 'Коммуникация',
     'galeri' => 'Галерея',
     'blog' => 'блог',

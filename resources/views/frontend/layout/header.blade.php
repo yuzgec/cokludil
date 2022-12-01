@@ -2,12 +2,12 @@
     <div class="info-top sticky-info">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-3">
+                <div class="col-lg-5">
                     <div class="info-left">
                         <p>Ermaksan <span> {{ __('site.firmaadi') }}</span></p>
                     </div>
                 </div>
-                <div class="col-lg-9">
+                <div class="col-lg-7">
                     <div class="info-right">
                         <div class="phone-call">
                             <span><i class="flaticon-telephone"></i>{{ __('site.telefon') }}: <strong>{{ config('settings.telefon1') }}</strong></span>
@@ -66,7 +66,7 @@
                             </li>
                             @endforeach
 
-                            <li><a href="/yeni/sayfa?ad=İnsan Kaynakları">Blog</a></li>
+                            <li><a href="{{ route('blog' ) }}">{{ __('site.blog') }} </a></li>
                             <li><a href="{{ route('reference' ) }}">{{ __('site.referanslar') }} </a></li>
 
                             <li><a href="{{ route('gallery') }}">{{ __('site.galeri') }}</a></li>
