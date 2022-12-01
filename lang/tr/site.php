@@ -12,6 +12,8 @@ return [
     'galeri' => 'Galeri',
     'referanslar'   => 'Referanslar',
     'ik' => 'İ.K.',
+    'blog' => 'Blog',
+
     'teklifiste'  => 'Teklif İste',
     'urunkategorileri'  => 'Ürün Kategorileri',
     'urunler'  => 'Ürünler',
@@ -30,7 +32,7 @@ return [
 
     //Link Önekleri
     'urun_link' => 'makineler',
-    'yedekparca_link' => 'yederparca',
+    'yedekparca_link' => 'yedekparca',
     'galeri_link' => 'galeri',
     'iletisim_link' => 'iletisim',
     'blog_link' => 'blog',
