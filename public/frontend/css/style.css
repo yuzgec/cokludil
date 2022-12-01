@@ -3144,7 +3144,7 @@
   font-weight: 500;
   font-size: 18px;
   position: relative;
-  margin-left: 35px; }
+}
   .bixol-title-area span.bixol-subtitle::before {
     content: '';
     width: 25px;
@@ -3382,6 +3382,11 @@ h6 {
 p {
   color: #3a4268;
   margin-bottom: 0; }
+
+.cerceve {
+    border: 1px solid #0c52c2;
+    border-radius: 5px;
+}
 
 .h4-headline h1,
 .h4-headline h2,

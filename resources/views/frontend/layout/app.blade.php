@@ -9,7 +9,6 @@
     {!! Twitter::generate() !!}
     @include('frontend.layout.css')
     @yield('customCSS')
-    @include('frontend.layout.css')
 </head>
 
 <body>

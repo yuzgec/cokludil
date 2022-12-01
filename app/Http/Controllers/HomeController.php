@@ -64,6 +64,8 @@ class HomeController extends Controller
         })->first();
 
         views($Detay)->cooldown(60)->record();
+
+
         SEOMeta::setTitle($Detay->title.' | Ermaksan Deri Makinaları Kürk Makinaları');
         SEOMeta::setDescription("Ermaksan 1989 yılından beri İzmir'de Deri ve Kürk Makinaları üretimi Yapmaktadır.");
         SEOMeta::setCanonical(url()->full());
