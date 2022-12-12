@@ -30,7 +30,6 @@ Route::group(["prefix"=>"go", 'middleware' => ['auth','web', 'admin']],function(
     Route::auto('/blogcategory', BlogCategoryController::class);
     Route::auto('/service', ServiceController::class);
     Route::auto('/servicecategory', ServiceCategoryController::class);
-    Route::auto('/gallery-categories', GalleryCategoryController::class);
     Route::auto('/slider', SliderController::class);
     Route::auto('/settings', SettingController::class);
     Route::auto('/contact', ContactController::class);
