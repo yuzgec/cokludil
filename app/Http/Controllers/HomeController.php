@@ -18,8 +18,7 @@ class HomeController extends Controller
         SEOMeta::setDescription("Ermaksan 1989 yılından beri İzmir'de Deri ve Kürk Makinaları üretimi Yapmaktadır.");
         SEOMeta::setCanonical(url()->full());
         $Hakkimizda = Page::where('id', '=',1)->first();
-        $Brand =  ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18'];
-        return view('frontend.index', compact('Hakkimizda','Brand'));
+        return view('frontend.index', compact('Hakkimizda'));
     }
 
 

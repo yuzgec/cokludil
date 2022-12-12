@@ -144,7 +144,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4">
-                    <div class="bixol-ct-left" data-background="assets/images/home1/map-bg.png">
+                    <div class="bixol-ct-left" data-background="/frontend/images/map-bg.png">
                         <span class="ct-title">32<sup>+</sup></span>
                         <span class="ct-subtitle">Dünya Genelinde 32 Ülkeye İhracat</span>
                     </div>
@@ -152,15 +152,14 @@
                 <div class="col-lg-8">
                     <div class="bixol-ct-right">
                         <div class="row">
-                            @foreach($Brand as $item)
+                            @for($i = 1; $i < 19 ; $i++)
                             <div class="col-md-2 col-sm-4 p-0 grid-item">
                                 <div class="bixol-pt-item">
-                                    <img src="/frontend/images/marka/{{$item}}.jpg" alt="Deri Makinaları İmalatı">
+                                    <img src="/frontend/images/marka/{{$i}}.jpg" alt="Deri Makinaları İmalatı">
                                 </div>
                             </div>
-                            @endforeach
+                            @endfor
                         </div>
-
                     </div>
                 </div>
             </div>

@@ -4,11 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\BlogCategoryRequest;
 use App\Models\BlogCategory;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
 class BlogCategoryController extends Controller
 {
+
     public function index()
     {
         $All = BlogCategory::get()->toFlatTree();
@@ -17,25 +17,13 @@ class BlogCategoryController extends Controller
 
     public function create()
     {
-        $Kategori = BlogCategory::pluck('title', 'id');
+        $Kategori = BlogCategory::all();
         return view('backend.blogcategory.create', compact('Kategori'));
     }
 
     public function store(BlogCategoryRequest $request)
     {
-        $New = new BlogCategory;
-
-        $New->title = $request->title;
-        $New->slug = seo($request->title);
-
-        $New->short = $request->short;
-        $New->desc = $request->desc;
-
-        $New->seo_desc = $request->seo_desc;
-        $New->seo_key = $request->seo_key;
-        $New->seo_title = $request->seo_title;
-
-        $New->save();
+        $New = BlogCategory::create($request->except('_token', 'image', 'gallery'));
 
         if ($request->image) {
             $New->addMedia($request->image)->toMediaCollection();
@@ -47,10 +35,9 @@ class BlogCategoryController extends Controller
         }
 
         toast(SWEETALERT_MESSAGE_CREATE, 'success');
-        return redirect()->route('service-categories.index');
+        return redirect()->route('blogcategory.index');
 
     }
-
 
     public function show($id)
     {
@@ -61,7 +48,8 @@ class BlogCategoryController extends Controller
     public function edit($id)
     {
         $Edit = BlogCategory::findOrFail($id);
-        $Kategori = BlogCategory::pluck('title', 'id');
+        $Kategori = BlogCategory::all();
+
         return view('backend.blogcategory.edit', compact('Edit', 'Kategori'));
     }
 
@@ -71,7 +59,6 @@ class BlogCategoryController extends Controller
         $Update = BlogCategory::findOrFail($id);
 
         $Update->title = $request->title;
-        $Update->slug = seo($request->title);
         $Update->short = $request->short;
         $Update->desc = $request->desc;
 
@@ -94,7 +81,7 @@ class BlogCategoryController extends Controller
         }
 
         toast(SWEETALERT_MESSAGE_UPDATE, 'success');
-        return redirect()->route('service-categories.index');
+        return redirect()->route('blogcategory.index');
 
     }
 
@@ -108,24 +95,6 @@ class BlogCategoryController extends Controller
         $Delete->delete();
 
         toast(SWEETALERT_MESSAGE_DELETE, 'success');
-        return redirect()->route('service-categories.index');
-    }
-
-    public function postUpload(Request $request)
-    {
-
-        if($request->hasFile('upload')) {
-            $filenamewithextension = $request->file('upload')->getClientOriginalName();
-            $filename = pathinfo($filenamewithextension, PATHINFO_FILENAME);
-            $extension = $request->file('upload')->getClientOriginalExtension();
-            $filenametostore = seo($filename).'_'.time().'.'.$extension;
-            $request->file('upload')->storeAs('public/uploads', $filenametostore);
-            $CKEditorFuncNum = $request->input('CKEditorFuncNum');
-            $url = asset('storage/uploads/'.$filenametostore);
-            $msg = 'Resim Yüklendi';
-            $re = "<script>window.parent.CKEDITOR.tools.callFunction($CKEditorFuncNum, '$url', '$msg')</script>";
-            @header('Content-type: text/html; charset=utf-8');
-            echo $re;
-        }
+        return redirect()->route('blogcategory.index');
     }
 }

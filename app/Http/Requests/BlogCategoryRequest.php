@@ -14,17 +14,16 @@ class BlogCategoryRequest extends FormRequest
     public function rules()
     {
         return [
-            'title'                 => 'required|min:6|max:99|unique:blog_categories,title,'.$this->id,
+            'title:tr'                 => 'required|min:3|max:99',
         ];
     }
 
     public function messages()
     {
         return [
-            'title.required'            => 'Blog Kategori başlığını giriniz',
-            'title.max'                 => 'Blog Kategori başlığı en fazla 99 karakter olabilir',
-            'title.min'                 => 'Blog Kategori başlığı en fazla 6 karakter olabilir',
-            'title.unique'              => 'Blog Kategori başlığı daha önce eklenmiş',
+            'title:tr.required'            => 'Sayfa Kategori başlığını giriniz (TR)',
+            'title:tr.max'                 => 'Sayfa Kategori başlığı en fazla 99 karakter olabilir (TR)',
+            'title:tr.min'                 => 'Sayfa Kategori başlığı en az 3 karakter olabilir (TR)'
         ];
     }
 }

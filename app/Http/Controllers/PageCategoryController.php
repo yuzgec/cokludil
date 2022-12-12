@@ -59,7 +59,6 @@ class PageCategoryController extends Controller
     public function update(PageCategoryRequest $request, $id)
     {
 
-        //dd($request->all());
         $Update = PageCategory::findOrFail($id);
 
         $Update->title = $request->title;
