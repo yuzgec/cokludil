@@ -100,7 +100,7 @@
                                             aria-controls="nav-home"
                                             aria-selected="true">
                                             <div class="bixol-title-area">
-                                                <span class="bixol-subtitle">{{ __('siite.genel') }}</span>
+                                                <span class="bixol-subtitle">{{ __('site.genel') }}</span>
                                             </div>
                                     </button>
                                     <button
@@ -113,7 +113,7 @@
                                         aria-controls="nav-profile"
                                         aria-selected="false">
                                         <div class="bixol-title-area">
-                                            <span class="bixol-subtitle">{{ __('siite.teknikozellikler') }}</span>
+                                            <span class="bixol-subtitle">{{ __('site.teknikozellikler') }}</span>
                                         </div>
                                     </button>
                                 </div>
