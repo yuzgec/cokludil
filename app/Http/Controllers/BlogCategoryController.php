@@ -62,9 +62,9 @@ class BlogCategoryController extends Controller
         $Update->short = $request->short;
         $Update->desc = $request->desc;
 
-        $Update->seo_title = $request->seo_title;
-        $Update->seo_desc = $request->seo_desc;
-        $Update->seo_key = $request->seo_key;
+        $Update->seo1 = $request->seo1;
+        $Update->seo2 = $request->seo2;
+        $Update->seo3 = $request->seo3;
 
         $Update->parent_id = $request->parent_id;
 
