@@ -19,7 +19,7 @@ class BlogCategory extends Model implements HasMedia,TranslatableContract
     public $translatedAttributes = ['title', 'slug', 'short', 'desc', 'seo1', 'seo2', 'seo3'];
 
     protected $guarded = [];
-    protected $table = 'service_category';
+    protected $table = 'blog_category';
 
     public function registerMediaConversions(Media $media = null): void
     {
