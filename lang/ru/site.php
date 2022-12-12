@@ -13,6 +13,11 @@ return [
     'blog' => 'блог',
     'referanslar'   => 'Ссылка',
     'ik' => 'И.К.',
+
+
+    'genel' => 'Описание продукта',
+    'teknikozellikler' => 'Технические характеристики',
+
     'teklifiste'  => 'Сделать запрос',
     'urunkategorileri'  => 'категории товаров',
     'urunler'  => 'Товары',
@@ -24,9 +29,21 @@ return [
     'deneyim' => "Годы опыта",
     'iletisimegec' => "Свяжитесь с нами",
     'katalog' =>  "Каталогs",
-    'katalog2' =>  "Deri Makinaları Satış ve Hizmetlerimiz için lütfen bizimle irtibata geçiniz.",
-    'katalog3' => "Güncel ürün ve yedek parça kataloğumuza butona tıklayarak ulaşabilirsiniz.",
-    'urunust' => "Firmamızın ürettiği makinaları görmek için aşağıdaki kategorilerden ilgili ürünlere gidebilirsiniz.",
+    'digermakina' => "Наши другие машины",
+
+    'katalog2' =>  "Пожалуйста, свяжитесь с нами для получения информации о продаже и обслуживании кожевенного оборудования.",
+    'katalog3' => "Вы можете перейти к нашему текущему каталогу продукции и запасных частей, нажав на кнопку.",
+    'urunust' => "Чтобы увидеть машины, произведенные нашей компанией, вы можете перейти к сопутствующим товарам из следующих категорий.",
+
+
+    'form_info' => 'Вы можете быстро отправить нам электронное письмо, заполнив форму. Наша команда экспертов свяжется с вами как можно скорее.',
+    'form_bilgial' => 'Получить информацию',
+    'form_adsoyad' => 'Имя Фамилия',
+    'form_telefon' => 'телефон',
+    'form_email' => 'Эл. почта',
+    'form_konu' => 'Предмет',
+    'form_mesaj' => 'Сообщение',
+    'form_submit' => 'Отправить сообщение',
 
 
     //Link Önekleri

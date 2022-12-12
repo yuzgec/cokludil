@@ -13,6 +13,10 @@ return [
     'blog' => 'Blog',
     'referanslar'   => 'References',
     'ik' => 'H.R.',
+
+    'genel' => 'Product description',
+    'teknikozellikler' => 'Technicial Specifications',
+
     'teklifiste'  => 'Get Offer',
     'urunkategorileri'  => 'Product Categories',
     'urunler'  => 'Products',
@@ -24,9 +28,19 @@ return [
     'deneyim' => "Years of Experience",
     'iletisimegec' => "Contact Us",
     'katalog' =>  "Catalog",
+    'digermakina' => "Our Other Machines",
     'katalog2' =>  "Please contact us for our Leather Machinery Sales and Services.",
     'katalog3' => "You can reach our current product and spare parts catalog by clicking the button.",
     'urunust' => "To see the machines produced by our company, you can go to the related products from the following categories.",
+
+    'form_info' => 'You can send us an email quickly by filling out the form. Our expert team will get back to you as soon as possible.',
+    'form_bilgial' => 'Get Info',
+    'form_adsoyad' => 'Nane Surname',
+    'form_telefon' => 'Phone Number',
+    'form_email' => 'Email Address',
+    'form_konu' => 'Subject',
+    'form_mesaj' => 'Message',
+    'form_submit' => 'Send Message',
 
 
     //Link Önekleri

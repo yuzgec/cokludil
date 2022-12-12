@@ -52,35 +52,35 @@
                     <div class="col-12 col-md-4 contact-v2 contact-v3 " style="border-radius: 5px;">
                         <div class="cerceve " style="padding: 10px;margin: 10px">
                             <div class="bixol-title-area">
-                                <span class="bixol-subtitle">Bilgi Al</span>
+                                <span class="bixol-subtitle">{{__('site.form_bilgial')}}</span>
                             </div>
                             <div class="contact-v2-right">
                                 <form action="#" >
                                     <div class="row">
                                         <div class="col-sm-12">
                                             <div class="fname">
-                                                <input type="text" placeholder="Adınız Soyadınız">
+                                                <input type="text" placeholder="{{__('site.form_adsoyad')}}">
                                             </div>
                                         </div>
 
                                         <div class="col-sm-12">
                                             <div class="phone-number">
-                                                <input type="tel" placeholder="Telefon Numaranız">
+                                                <input type="tel" placeholder="{{__('site.form_telefon')}}">
                                             </div>
                                         </div>
                                         <div class="col-sm-12">
                                             <div class="phone-number">
-                                                <input type="tel" placeholder="Email Adresiniz">
+                                                <input type="email" placeholder="{{__('site.form_email')}}">
                                             </div>
                                         </div>
                                         <div class="col-sm-12">
                                             <div class="message-field">
-                                                <textarea placeholder="Mesajınız" rows="3"></textarea>
+                                                <textarea placeholder="{{__('site.form_mesaj')}}" rows="3"></textarea>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="submit-btn">
-                                        <button type="submit"><i class="fas fa-check-circle"></i>MESAJI GÖNDER</button>
+                                        <button type="submit"><i class="fas fa-check-circle"></i>{{__('site.form_submit')}}</button>
                                     </div>
                                 </form>
                             </div>
@@ -100,7 +100,7 @@
                                             aria-controls="nav-home"
                                             aria-selected="true">
                                             <div class="bixol-title-area">
-                                                <span class="bixol-subtitle">Genel</span>
+                                                <span class="bixol-subtitle">{{ __('siite.genel') }}</span>
                                             </div>
                                     </button>
                                     <button
@@ -113,7 +113,7 @@
                                         aria-controls="nav-profile"
                                         aria-selected="false">
                                         <div class="bixol-title-area">
-                                            <span class="bixol-subtitle">Teknik Özellikler</span>
+                                            <span class="bixol-subtitle">{{ __('siite.teknikozellikler') }}</span>
                                         </div>
                                     </button>
                                 </div>
@@ -138,7 +138,7 @@
             <div class="row mt-30">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="bixol-title-area text-center">
-                        <h3>DİĞER MAKİNELERİMİZ</h3>
+                        <h3>{{ __('site.digermakina') }}</h3>
                     </div>
                 </div>
             </div>

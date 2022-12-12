@@ -14,6 +14,9 @@ return [
     'ik' => 'İ.K.',
     'blog' => 'Blog',
 
+    'genel' => 'Ürün Açıklaması',
+    'teknikozellikler' => 'Teknik Özellikler',
+
     'teklifiste'  => 'Teklif İste',
     'urunkategorileri'  => 'Ürün Kategorileri',
     'urunler'  => 'Ürünler',
@@ -22,13 +25,22 @@ return [
     'devaminioku' => "Devamını Oku",
     'incele' =>  'İncele',
     'musteri' => "Müşteri",
-    'deneyim' => "Yıllık DEneyim",
+    'deneyim' => "Yıllık Deneyim",
     'iletisimegec' => "İletişime Geç",
     'katalog' =>  "Katalog",
+    'digermakina' => "Diğer Makinalarımız",
     'katalog2' =>  "Deri Makinaları Satış ve Hizmetlerimiz için lütfen bizimle irtibata geçiniz.",
     'katalog3' => "Güncel ürün ve yedek parça kataloğumuza butona tıklayarak ulaşabilirsiniz.",
     'urunust' => "Firmamızın ürettiği makinaları görmek için aşağıdaki kategorilerden ilgili ürünlere gidebilirsiniz.",
 
+    'form_info' => 'Formu doldurarak bizlere hızlı bir şekilde email gönderebilirsiniz. Uzman ekibimiz en kısa zamanda sizlere dönüş yapacaktır.',
+    'form_bilgial' => 'Bilgi Al',
+    'form_adsoyad' => 'Adınız Soyadınız',
+    'form_telefon' => 'Telefon Numaranız',
+    'form_email' => 'Email Adresiniz',
+    'form_konu' => 'Mesaj Konusu',
+    'form_mesaj' => 'Mesajınız',
+    'form_submit' => 'Mesajı Gönder',
 
     //Link Önekleri
     'urun_link' => 'makineler',
