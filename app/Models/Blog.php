@@ -20,6 +20,12 @@ class Blog extends Model
     protected $table = 'blog';
 
 
+
+    public function getCategory(){
+        return $this->belongsTo('App\Models\BlogCategory', 'category');
+    }
+
+
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('img')->width(1000)->nonOptimized();
